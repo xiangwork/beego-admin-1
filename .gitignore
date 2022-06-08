@@ -1,4 +1,4 @@
-beego-admin.*exe*
+beego-admin*
 static/uploads/*
 .idea/*
 main.exe
