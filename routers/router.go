@@ -2,7 +2,6 @@ package routers
 
 import (
 	"beego-admin/controllers"
-	"beego-admin/middleware"
 	"github.com/beego/beego/v2/server/web"
 	"github.com/beego/beego/v2/server/web/context"
 	"github.com/dchest/captcha"
@@ -11,7 +10,7 @@ import (
 
 func init() {
 	//授权登录中间件
-	middleware.AuthMiddle()
+	//middleware.AuthMiddle()
 
 	web.Get("/", func(ctx *context.Context) {
 		ctx.Redirect(http.StatusFound, "/admin/index/index")
@@ -150,6 +149,9 @@ func init() {
 		web.NSRouter("/user/del", &controllers.UserController{}, "post:Del"),
 		//用户管理-导出
 		web.NSRouter("/user/export", &controllers.UserController{}, "get:Export"),
+
+		//绑定账号
+		web.NSRouter("/account/list", &controllers.AccountController{}, "get:GetAll"),
 	)
 
 	web.AddNamespace(admin)
