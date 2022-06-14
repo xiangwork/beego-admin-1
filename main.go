@@ -6,6 +6,7 @@ import (
 	_ "beego-admin/initialize/session"
 	_ "beego-admin/routers"
 	_ "beego-admin/utils/template"
+
 	beego "github.com/beego/beego/v2/adapter"
 )
 
