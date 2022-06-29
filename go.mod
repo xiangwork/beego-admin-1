@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/360EntSecGroup-Skylar/excelize v1.4.1
-	github.com/adam-hanna/arrayOperations v1.0.1
+	github.com/adam-hanna/arrayOperations v0.2.6
 	github.com/beego/beego/v2 v2.0.4
 	github.com/dchest/captcha v0.0.0-20200903113550-03f5f0333e1f
 	github.com/fsnotify/fsnotify v1.5.4

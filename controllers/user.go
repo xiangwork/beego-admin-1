@@ -9,11 +9,12 @@ import (
 	"beego-admin/utils"
 	"beego-admin/utils/exceloffice"
 	"beego-admin/utils/template"
-	"github.com/adam-hanna/arrayOperations"
-	"github.com/gookit/validate"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/adam-hanna/arrayOperations"
+	"github.com/gookit/validate"
 )
 
 // UserController struct

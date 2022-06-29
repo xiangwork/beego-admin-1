@@ -8,10 +8,11 @@ import (
 	"beego-admin/services"
 	"beego-admin/utils"
 	"encoding/base64"
-	"github.com/adam-hanna/arrayOperations"
-	"github.com/gookit/validate"
 	"strconv"
 	"strings"
+
+	"github.com/adam-hanna/arrayOperations"
+	"github.com/gookit/validate"
 )
 
 // AdminUserController struct
@@ -257,7 +258,7 @@ func (auc *AdminUserController) UpdateNickName() {
 	}
 
 	// 验证是否是登陆用户，这里也可不用提供的id，使用登陆的id即可
-	if loginUser.Id != id{
+	if loginUser.Id != id {
 		response.ErrorWithMessage("数据非法", auc.Ctx)
 	}
 
@@ -282,7 +283,7 @@ func (auc *AdminUserController) UpdatePassword() {
 	reNewPassword := auc.GetString("renew_password")
 
 	// 验证是否是登陆用户，这里也可不用提供的id，使用登陆的id即可
-	if loginUser.Id != id{
+	if loginUser.Id != id {
 		response.ErrorWithMessage("数据非法", auc.Ctx)
 	}
 

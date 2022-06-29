@@ -7,10 +7,11 @@ import (
 	"beego-admin/models"
 	"beego-admin/services"
 	"beego-admin/utils"
-	"github.com/adam-hanna/arrayOperations"
-	"github.com/gookit/validate"
 	"strconv"
 	"strings"
+
+	"github.com/adam-hanna/arrayOperations"
+	"github.com/gookit/validate"
 )
 
 // AdminMenuController struct.
