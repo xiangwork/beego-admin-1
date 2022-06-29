@@ -6,12 +6,14 @@ import (
 	"beego-admin/utils/encrypter"
 	"beego-admin/utils/page"
 	"encoding/json"
+
 	beego "github.com/beego/beego/v2/adapter"
 	"github.com/beego/beego/v2/server/web/context"
 
-	"github.com/beego/beego/v2/client/orm"
 	"net/url"
 	"time"
+
+	"github.com/beego/beego/v2/client/orm"
 )
 
 // AdminLogService struct
@@ -37,7 +39,7 @@ func (*AdminLogService) CreateAdminLog(loginUser *models.AdminUser, menu *models
 
 	o := orm.NewOrm()
 	//开启事务
-	to,err := o.Begin()
+	to, err := o.Begin()
 
 	adminLogID, err := to.Insert(&adminLog)
 	if err != nil {
@@ -75,7 +77,7 @@ func (*AdminLogService) LoginLog(loginUserID int, ctx *context.Context) {
 	o := orm.NewOrm()
 
 	//开启事务
-	to,err := o.Begin()
+	to, err := o.Begin()
 
 	adminLogID, err := o.Insert(&adminLog)
 	if err != nil {

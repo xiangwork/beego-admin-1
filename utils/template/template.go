@@ -2,10 +2,11 @@
 package template
 
 import (
-	beego "github.com/beego/beego/v2/adapter"
 	"math"
 	"strconv"
 	"time"
+
+	beego "github.com/beego/beego/v2/adapter"
 )
 
 func init() {

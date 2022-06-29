@@ -3,9 +3,6 @@ package services
 import (
 	"beego-admin/global"
 	"encoding/base64"
-	beego "github.com/beego/beego/v2/adapter"
-	"github.com/beego/beego/v2/server/web/context"
-	"github.com/google/uuid"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -15,6 +12,10 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+
+	beego "github.com/beego/beego/v2/adapter"
+	"github.com/beego/beego/v2/server/web/context"
+	"github.com/google/uuid"
 )
 
 // UeditorService struct

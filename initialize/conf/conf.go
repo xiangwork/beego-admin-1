@@ -4,9 +4,10 @@ import (
 	"beego-admin/global"
 	"beego-admin/utils"
 	"fmt"
+	"os"
+
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
-	"os"
 )
 
 //加载配置文件

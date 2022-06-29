@@ -6,12 +6,13 @@ import (
 	"beego-admin/utils"
 	"bufio"
 	"encoding/base64"
-	beego "github.com/beego/beego/v2/adapter"
 	"io"
 	"os"
 	"runtime"
 	"strings"
 	"time"
+
+	beego "github.com/beego/beego/v2/adapter"
 )
 
 // IndexController struct

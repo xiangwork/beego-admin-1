@@ -2,9 +2,10 @@ package response
 
 import (
 	"beego-admin/global"
+	"net/http"
+
 	beego "github.com/beego/beego/v2/adapter"
 	"github.com/beego/beego/v2/server/web/context"
-	"net/http"
 )
 
 const (

@@ -4,10 +4,11 @@ import (
 	"beego-admin/global"
 	"beego-admin/models"
 	"beego-admin/services"
-	beego "github.com/beego/beego/v2/adapter"
 	"net/url"
 	"strconv"
 	"strings"
+
+	beego "github.com/beego/beego/v2/adapter"
 )
 
 // NestPreparer 定义子控制器初始化方法

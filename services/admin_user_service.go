@@ -8,10 +8,11 @@ import (
 	"beego-admin/utils/page"
 	"encoding/base64"
 	"errors"
-	"github.com/beego/beego/v2/client/orm"
-	"github.com/beego/beego/v2/server/web/context"
 	"net/url"
 	"strconv"
+
+	"github.com/beego/beego/v2/client/orm"
+	"github.com/beego/beego/v2/server/web/context"
 )
 
 // AdminUserService struct

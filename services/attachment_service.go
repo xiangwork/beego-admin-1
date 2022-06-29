@@ -5,10 +5,6 @@ import (
 	"beego-admin/models"
 	"beego-admin/utils"
 	"errors"
-	beego "github.com/beego/beego/v2/adapter"
-	"github.com/beego/beego/v2/client/orm"
-	"github.com/beego/beego/v2/server/web/context"
-	"github.com/google/uuid"
 	"io"
 	"mime/multipart"
 	"net/http"
@@ -18,6 +14,11 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	beego "github.com/beego/beego/v2/adapter"
+	"github.com/beego/beego/v2/client/orm"
+	"github.com/beego/beego/v2/server/web/context"
+	"github.com/google/uuid"
 )
 
 // AttachmentService struct
@@ -176,7 +177,7 @@ func (*AttachmentService) UploadMulti(ctx *context.Context, name string, adminUs
 
 // validateForAttachment attachment自定义验证
 func validateForAttachment(h *multipart.FileHeader) error {
-	validateSize, _ :=  strconv.Atoi(global.BA_CONFIG.Attachment.ValidateSize)
+	validateSize, _ := strconv.Atoi(global.BA_CONFIG.Attachment.ValidateSize)
 	validateExt := global.BA_CONFIG.Attachment.ValidateExt
 	if int(h.Size) > validateSize {
 		return errors.New("文件超过限制大小")
