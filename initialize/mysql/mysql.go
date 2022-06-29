@@ -3,8 +3,8 @@ package mysql
 import (
 	"beego-admin/global"
 	"fmt"
+	"github.com/beego/beego/v2/core/logs"
 
-	beego "github.com/beego/beego/v2/adapter"
 	"github.com/beego/beego/v2/client/orm"
 
 	// mysql driver
@@ -15,7 +15,7 @@ import (
 func init() {
 	err := orm.RegisterDriver("mysql", orm.DRMySQL)
 	if err != nil {
-		beego.Error("mysql register driver error:", err)
+		logs.Error("mysql register driver error:", err)
 	}
 
 	//dataSource := "root:root@tcp(127.0.0.1:3306)/test"
@@ -29,6 +29,6 @@ func init() {
 
 	err = orm.RegisterDataBase("default", "mysql", dataSource)
 	if err != nil {
-		beego.Error("mysql register database error:", err)
+		logs.Error("mysql register database error:", err)
 	}
 }

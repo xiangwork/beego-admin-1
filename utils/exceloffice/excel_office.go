@@ -1,11 +1,11 @@
 package exceloffice
 
 import (
+	"github.com/beego/beego/v2/core/logs"
 	"strconv"
 	"time"
 
 	"github.com/360EntSecGroup-Skylar/excelize"
-	beego "github.com/beego/beego/v2/adapter"
 	"github.com/beego/beego/v2/server/web/context"
 )
 
@@ -83,7 +83,7 @@ func ExportData(head []string, body [][]string, name string, version string, tit
 	responseWriter.Header().Set("Cache-Control", "max-age=0")
 
 	if _, err := f.WriteTo(responseWriter); err != nil {
-		beego.Warning("export data err:", err.Error())
+		logs.Warning("export data err:", err.Error())
 	}
 	return
 }

@@ -6,8 +6,8 @@ import (
 	"beego-admin/utils/encrypter"
 	"beego-admin/utils/page"
 	"encoding/json"
+	"github.com/beego/beego/v2/core/logs"
 
-	beego "github.com/beego/beego/v2/adapter"
 	"github.com/beego/beego/v2/server/web/context"
 
 	"net/url"
@@ -44,7 +44,7 @@ func (*AdminLogService) CreateAdminLog(loginUser *models.AdminUser, menu *models
 	adminLogID, err := to.Insert(&adminLog)
 	if err != nil {
 		to.Rollback()
-		beego.Error(err)
+		logs.Error(err)
 		return
 	}
 
@@ -57,7 +57,7 @@ func (*AdminLogService) CreateAdminLog(loginUser *models.AdminUser, menu *models
 	_, err = to.Insert(&adminLogData)
 	if err != nil {
 		to.Rollback()
-		beego.Error(err)
+		logs.Error(err)
 		return
 	}
 	to.Commit()
@@ -82,7 +82,7 @@ func (*AdminLogService) LoginLog(loginUserID int, ctx *context.Context) {
 	adminLogID, err := o.Insert(&adminLog)
 	if err != nil {
 		to.Rollback()
-		beego.Error(err)
+		logs.Error(err)
 		return
 	}
 
@@ -96,7 +96,7 @@ func (*AdminLogService) LoginLog(loginUserID int, ctx *context.Context) {
 	_, err = o.Insert(&adminLogData)
 	if err != nil {
 		to.Rollback()
-		beego.Error(err)
+		logs.Error(err)
 		return
 	}
 	to.Commit()

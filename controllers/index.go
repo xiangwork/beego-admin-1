@@ -6,6 +6,7 @@ import (
 	"beego-admin/utils"
 	"bufio"
 	"encoding/base64"
+	"github.com/beego/beego/v2/core/logs"
 	"io"
 	"os"
 	"runtime"
@@ -128,7 +129,7 @@ func (ic *IndexController) getSystemInfo() map[string]interface{} {
 	var requireList []*PackageLib
 	srcFile, err := os.Open("go.mod")
 	if err != nil {
-		beego.Error(err)
+		logs.Error(err)
 	} else {
 		defer srcFile.Close()
 		reader := bufio.NewReader(srcFile)
