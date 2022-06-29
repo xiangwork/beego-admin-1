@@ -51,20 +51,14 @@ func (ds *DatabaseService) GetTableStatus() ([]map[string]string, int) {
 func (*DatabaseService) OptimizeTable(tableName string) bool {
 	o := orm.NewOrm()
 	_, err := o.Raw("OPTIMIZE TABLE `" + tableName + "`").Exec()
-	if err == nil {
-		return true
-	}
-	return false
+	return err == nil
 }
 
 // RepairTable 修复数据表
 func (*DatabaseService) RepairTable(tableName string) bool {
 	o := orm.NewOrm()
 	_, err := o.Raw("REPAIR TABLE `" + tableName + "`").Exec()
-	if err == nil {
-		return true
-	}
-	return false
+	return err == nil
 }
 
 // GetFullColumnsFromTable 获取数据表的所有字段

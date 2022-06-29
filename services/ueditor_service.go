@@ -485,11 +485,12 @@ func (*UeditorService) saveRemote(config map[string]string, fieldName string) ma
 
 	//获取请求头并检测死链
 	response, err := http.Get(imgURL)
-	defer response.Body.Close()
 	if err != nil || response.StatusCode != 200 {
 		result["state"] = "链接不可用"
 		return result
 	}
+
+	defer response.Body.Close()
 
 	//格式验证(扩展名验证和Content-Type验证)
 	if !strings.Contains(response.Header.Get("Content-Type"), "image") {
