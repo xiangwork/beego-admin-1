@@ -267,7 +267,7 @@ func (adminTreeService *AdminTreeService) GetTree(myId int, str string, sid int,
 			if !ok {
 				parentIDInt = int(value["ParentId"].(int64))
 			}
-			if 0 == parentIDInt && strGroup != "" {
+			if parentIDInt == 0 && strGroup != "" {
 				nStr = strGroup
 			} else {
 				nStr = str

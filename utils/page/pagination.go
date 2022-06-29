@@ -197,7 +197,7 @@ func (pagination *Pagination) getDots() string {
 func (pagination *Pagination) getUrlLinks(urls map[int]string) string {
 	html := ""
 	var sortKeys []int
-	for page, _ := range urls {
+	for page := range urls {
 		sortKeys = append(sortKeys, page)
 	}
 	sort.Ints(sortKeys)
@@ -222,5 +222,5 @@ func (pagination *Pagination) getPageLinkWrapper(url string, page interface{}) s
 
 //数据是否足够分页
 func (pagination *Pagination) hasPages() bool {
-	return !(1 == pagination.CurrentPage && !pagination.HasMore)
+	return !(pagination.CurrentPage == 1 && !pagination.HasMore)
 }

@@ -48,7 +48,7 @@ func (*AttachmentService) Upload(ctx *context.Context, name string, adminUserId 
 
 	_, err = os.Stat(saveRealDir)
 	if err != nil {
-		err = os.MkdirAll(saveRealDir, os.ModePerm)
+		os.MkdirAll(saveRealDir, os.ModePerm)
 	}
 
 	saveURL := "/" + global.BA_CONFIG.Attachment.Url + saveName + fileExt
@@ -97,10 +97,12 @@ func (*AttachmentService) UploadMulti(ctx *context.Context, name string, adminUs
 		h := files[i]
 		//for each fileheader, get a handle to the actual file
 		file, err := files[i].Open()
-		defer file.Close()
+
 		if err != nil {
 			return nil, err
 		}
+
+		defer file.Close()
 		////create destination file making sure the path is writeable.
 		//dst, err := os.Create("upload/" + files[i].Filename)
 		//defer dst.Close()
@@ -129,7 +131,7 @@ func (*AttachmentService) UploadMulti(ctx *context.Context, name string, adminUs
 
 		_, err = os.Stat(saveRealDir)
 		if err != nil {
-			err = os.MkdirAll(saveRealDir, os.ModePerm)
+			os.MkdirAll(saveRealDir, os.ModePerm)
 		}
 
 		saveURL := "/" + global.BA_CONFIG.Attachment.Url + saveName + fileExt

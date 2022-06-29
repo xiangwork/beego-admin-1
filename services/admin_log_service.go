@@ -39,7 +39,7 @@ func (*AdminLogService) CreateAdminLog(loginUser *models.AdminUser, menu *models
 
 	o := orm.NewOrm()
 	//开启事务
-	to, err := o.Begin()
+	to, _ := o.Begin()
 
 	adminLogID, err := to.Insert(&adminLog)
 	if err != nil {
@@ -77,7 +77,7 @@ func (*AdminLogService) LoginLog(loginUserID int, ctx *context.Context) {
 	o := orm.NewOrm()
 
 	//开启事务
-	to, err := o.Begin()
+	to, _ := o.Begin()
 
 	adminLogID, err := o.Insert(&adminLog)
 	if err != nil {

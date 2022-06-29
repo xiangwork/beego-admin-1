@@ -118,7 +118,7 @@ func (*UeditorService) upFile(fieldName string, ctx *context.Context) map[string
 
 	_, err = os.Stat(saveRealDir)
 	if err != nil {
-		err = os.MkdirAll(saveRealDir, os.ModePerm)
+		os.MkdirAll(saveRealDir, os.ModePerm)
 	}
 
 	saveURL := "/static/uploads/ueditor/" + saveName + fileExt
