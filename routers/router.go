@@ -2,15 +2,17 @@ package routers
 
 import (
 	"beego-admin/controllers"
+	"beego-admin/middleware"
+	"net/http"
+
 	"github.com/beego/beego/v2/server/web"
 	"github.com/beego/beego/v2/server/web/context"
 	"github.com/dchest/captcha"
-	"net/http"
 )
 
 func init() {
 	//授权登录中间件
-	//middleware.AuthMiddle()
+	middleware.AuthMiddle()
 
 	web.Get("/", func(ctx *context.Context) {
 		ctx.Redirect(http.StatusFound, "/admin/index/index")
