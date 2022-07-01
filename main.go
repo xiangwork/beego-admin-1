@@ -2,6 +2,7 @@ package main
 
 import (
 	_ "beego-admin/initialize/conf"
+	_ "beego-admin/initialize/logs"
 	_ "beego-admin/initialize/mysql"
 	_ "beego-admin/initialize/session"
 	_ "beego-admin/routers"

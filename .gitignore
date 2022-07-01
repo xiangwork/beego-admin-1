@@ -7,3 +7,4 @@ vendor/*
 go.sum
 lastupdate.tmp
 config.yaml
+**/*.log
