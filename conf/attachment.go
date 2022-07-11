@@ -1,6 +1,6 @@
 package conf
 
-// 上传附件配置
+// Attachment 上传附件配置
 type Attachment struct {
 	ThumbPath    string `mapstructure:"thumb_path" json:"thumb_path" yaml:"thumb_path"`          //缩略图路径
 	Path         string `mapstructure:"path" json:"path" yaml:"path"`                            //上传目录配置（相对于根目录）
