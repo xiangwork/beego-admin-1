@@ -2,7 +2,8 @@ package session
 
 import beego "github.com/beego/beego/v2/adapter"
 
-func init() {
+// Init 初始化
+func Init() {
 	//session 过期时间，默认值是 3600 秒
 	beego.BConfig.WebConfig.Session.SessionGCMaxLifetime = 7200
 

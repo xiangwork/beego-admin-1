@@ -11,8 +11,8 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-// init 注册mysql
-func init() {
+// Init  注册mysql
+func Init() {
 	err := orm.RegisterDriver("mysql", orm.DRMySQL)
 	if err != nil {
 		logs.Error("mysql register driver error:", err)

@@ -10,8 +10,8 @@ import (
 	"github.com/spf13/viper"
 )
 
-//加载配置文件
-func init() {
+// Init 加载配置文件
+func Init() {
 	var config string
 	if configEnv := os.Getenv(utils.ConfigEnv); configEnv == "" {
 		config = utils.ConfigFile
