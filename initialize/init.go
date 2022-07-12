@@ -5,6 +5,8 @@ import (
 	"beego-admin/initialize/logs"
 	"beego-admin/initialize/mysql"
 	"beego-admin/initialize/session"
+	"beego-admin/routers"
+	_ "beego-admin/utils/template"
 )
 
 func init() {
@@ -12,4 +14,5 @@ func init() {
 	conf.Init()
 	session.Init()
 	mysql.Init()
+	routers.Init()
 }

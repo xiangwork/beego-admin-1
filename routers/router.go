@@ -10,7 +10,8 @@ import (
 	"github.com/dchest/captcha"
 )
 
-func init() {
+// Init 路由初始化
+func Init() {
 	//授权登录中间件
 	middleware.AuthMiddle()
 
