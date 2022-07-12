@@ -1,12 +1,17 @@
 #beego 默认配置文件
 appname = beego-admin
 
+httpaddr=0.0.0.0
 httpport = 8000
+enablehttps = true
+httpscertfile="/"
+httpskeyfile="/"
 
 runmode = dev
 
 #开启admin
 enableadmin = true
+adminaddr=127.0.0.1
 
 #开启session
 sessionon = true
