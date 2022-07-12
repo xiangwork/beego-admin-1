@@ -7,6 +7,7 @@ import (
 	"beego-admin/initialize/session"
 	"beego-admin/routers"
 	_ "beego-admin/utils/template"
+	_ "github.com/beego/beego/v2/server/web/session/redis"
 )
 
 func init() {

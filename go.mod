@@ -19,6 +19,7 @@ require (
 require (
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/go-redis/redis/v7 v7.4.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/gookit/filter v1.1.2 // indirect
 	github.com/gookit/goutil v0.5.5 // indirect
